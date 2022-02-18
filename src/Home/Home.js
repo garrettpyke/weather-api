@@ -1,17 +1,17 @@
-import welcome_img from '../images/styling/home_graphic_short.jpg'
+import img from '../images/styling/home_graphic_short.jpg'
+//note: image loads correctly when I change BrowserRouter in index.js to HashRouter, but Routes stop working
 
 export default function Home() {
 
     return (
         <>
-            <header>
+            {/* <header>
                 <div>
                     (header)
                 </div>
-            </header>
+            </header> */}
             <div className="home">
-               
-                <img src={welcome_img} alt="welcome image"/>
+                <img src={img} alt="welcome image"/>
                 <h2>to my weather API app!</h2>
             </div>
             {/* <footer>

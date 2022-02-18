@@ -16,7 +16,7 @@ export default function Form(props) {
     }
 
     return (
-        <>
+        <div className="form">
             <form className="form form-main" onSubmit={handleSubmit}>
                 <label htmlFor='location'>Location: </label>
                 <input 
@@ -30,7 +30,7 @@ export default function Form(props) {
                     value="Get weather info"
                 />
             </form>
-        </>
+        </div>
     )
 
 }

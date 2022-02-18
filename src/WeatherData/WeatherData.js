@@ -4,15 +4,18 @@ export default function WeatherData({currentData}) {
 
     const urlPrefix = 'https:'
 
-    console.log('WeatherData: ', currentData) 
+    console.log('WeatherData: ', currentData) //remove
 
     if (currentData) {
-        console.log("yes currentData") 
+        console.log("yes currentData") //remove
         return (
             <div className="weather-container">
-                <h3 id="location-head">Weather in {currentData.location.name}, {currentData.location.region}</h3>
+                <div id="location-head">
+                    <h3>Weather in {currentData.location.name}, {currentData.location.region}</h3>
+                    <h5>(as of {currentData.current.last_updated})</h5>
+                </div>
                 <div className="weather weather-current">
-                    <h4>Current <span>(as of {currentData.current.last_updated})</span></h4>
+                    <h4>Current</h4>
                     <img className="weather-icon" id="icon-current" src={`${urlPrefix}${currentData.current.condition.icon}`}/>
                     <h5>{currentData.current.condition.text}</h5>
                     <h5>{currentData.current.temp_f}℉ / {currentData.current.temp_c}℃</h5>

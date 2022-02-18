@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { Route, Link, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import './App.css';
 import './Grid.css';
+import Header from "./HeaderFooter/Header";
+import Footer from "./HeaderFooter/Footer";
 import Home from './Home/Home';
 import Form from './Form/Form';
 import WeatherData from './WeatherData/WeatherData';
+import About from "./About/About";
 import Aaron from './Aaron/Aaron'
 
 const baseUrl = 'https://api.weatherapi.com/v1/forecast.json?key='
@@ -36,17 +39,22 @@ function App() {
   console.log("3. currentData: ", currentData)
  
   return (
-    <div className="main-container">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Navigate to="/" />} />
-        <Route path="/Aaron" element={<Aaron baseUrl={baseUrl} apiKey={apiKey} locationParam={locationParam} daysUrlParam={daysUrlParam} aqiUrlParam={aqiUrlParam} alertsParam={alertsParam} handleSubmit={handleSubmit}  />} />
-        {/* <Route path="/location/:param" /> */}
-      </Routes>
-      <Form  handleSubmit={handleSubmit}/>
-      
-      { currentData.location ? <WeatherData currentData={currentData}/> : null  }
-    </div>
+    <>             
+      <div className="main-container">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Navigate to="/" />} />
+          <Route path="/about" element={<About />}/>
+          <Route path="/Aaron" element={<Aaron handleSubmit={handleSubmit} />} />
+          {/* <Route path="/location/:param" /> */}
+        </Routes>
+        <Form  handleSubmit={handleSubmit}/>
+        {/* <About /> */}
+        { currentData.location ? <WeatherData currentData={currentData}/> : null  }
+        <Footer />
+      </div>
+    </>  
   );
 }
 

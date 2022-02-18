@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import './Aaron.css'
+import welcome_img from '../images/styling/home_graphic_short.jpg'
 
 export default function Aaron({ handleSubmit }) {
 
@@ -10,8 +11,11 @@ export default function Aaron({ handleSubmit }) {
     }, [broLocation])
 
     return (
-        <div className="bro-div">
-            <h2>Aaron's Page</h2>
+        <div className="home home-aaron">
+            <img src={welcome_img} alt="welcome image"/>
+            <h2>to my weather API app!</h2>
+            <div className="bro-div">
+            </div>
         </div>
     )
 }
