@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Links
+* [GitHub Project Link](https://git.generalassemb.ly/garrett-pyke/project-2-react-weather-api)
+* [Deployed Project Link]()
 
-## Available Scripts
+## Project Description
+React.js application implementing a simple weather API, providing current conditions, forecast, AQI and lunar phase information for a given location. <br>
 
-In the project directory, you can run:
+User may input a U.S. Zip Code, Canandian or UK Postal Code, city name, 3-digit IATA airport code, or latitude & longitude in decimal degrees for relevant data. <br>
 
-### `npm start`
+Project will make use of React Hooks, React Router, and responsive web design.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## API
+The API to be used is provided by [WeatherAPI.com](https://www.weatherapi.com/) and is updated hourly. This is a free service provided that (1) API calls do not exceed 1M per month, and (2) a link-back is given in the application itself. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com" border="0"></a>
 
-### `npm test`
+Sample data:
+```
+{
+"location": {
+    "name": "Ogden",
+    "region": "Utah",
+    "country": "USA",
+    "lat": 41.18,
+    "lon": -111.92,
+    "tz_id": "America/Denver",
+    "localtime_epoch": 1644738612,
+    "localtime": "2022-02-13 0:50"
+},
+"current": {
+    "last_updated_epoch": 1644738300,
+    "last_updated": "2022-02-13 00:45",
+    "temp_c": 1.3,
+    "temp_f": 34.3,
+    "is_day": 0,
+    "condition": {
+        "text": "Clear",
+        "icon": "//cdn.weatherapi.com/weather/64x64/night/113.png",
+        "code": 1000
+    },
+    "wind_mph": 10.5,
+    "wind_kph": 16.9,
+    "wind_degree": 110,
+    "wind_dir": "ESE",
+    "pressure_mb": 1030,
+    "pressure_in": 30.41,
+    "precip_mm": 0,
+    "precip_in": 0,
+    "humidity": 48,
+    "cloud": 0,
+    "feelslike_c": -1.3,
+    "feelslike_f": 29.7,
+    "vis_km": 16,
+    "vis_miles": 9,
+    "uv": 1,
+    "gust_mph": 10.7,
+    "gust_kph": 17.3
+}
+}
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Wireframes
+* [Mobile & Desktop](https://git.generalassemb.ly/garrett-pyke/project-2-react-weather-api/blob/master/wireframe.pdf)
 
-### `npm run build`
+### MVP/PostMVP
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### MVP
+* Landing component - allows user to enter location data, and explains which location data formats may be used
+* Results component - renders data for specified locale on page
+   * React Router reflects location in url upon render of weather data
+   * Weather icons display along with weather condition data (sunny, cloudy, etc.) (Icons also provided by WeatherAPI.)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### PostMVP
+* Language support for other than English
+* Optional Air Quality Index data will be displayed if user requests
+* Any Alerts for the location queried will be displayed
+* Sunrise/sunset info will be provided
+* Lunar phase info will display including:
+   * Moon phase
+   * Moonrise/moonset
+   * Lunar illumination
+* IP Lookup API, also part of WeatherAPI offering, will be added to extrapolate user location.   
+* Potential React Router 'easter egg' for a certain family member to find
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Time Frames
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Initialize framework | H | .5 hrs |  | 1 hr
+| Build out components | H | 3 hrs|  | 2 hrs
+| Working with API | H | 4.5 hrs|  | 12 hrs 
+| Matching icons w/API results | M | 2 hrs |  | 1.5 hrs
+| Adding Form | H | 3.5 hrs|  | 1.5 hrs |
+| Styling | H | 4 hrs |  | 10 hrs |
+| Deployment | M | 2 hrs |  | 2 hrs | 
+| **Total** |  | 19.5 hrs |  |  | 30 hrs
 
-### `npm run eject`
+## Additional Libraries
+Supporting libraries, tutorials, code snippets, etc. will be listed here.
+   * Coolors (coolors.co) - color palette
+   * Canva (canva.com) - design tools for Welcome/Home image
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Code Snippet
+A piece of this project that I feel is somewhat clever is the brevity of Aaron.js. I was able to set up the functionality for a secondary API call without (1) needing to add a new function, or (2) creating an infinite re-render problem.
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
