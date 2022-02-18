@@ -1,6 +1,6 @@
 {
   "name": "weather-api",
-  "homepage": "https://garrettpyke.github.io/-project-2-react-weather-api",
+  "homepage": "https://garrettpyke.github.io/weather-api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
