@@ -3,20 +3,13 @@ import welcome_img from "../images/styling/home_graphic_short.jpg";
 
 export default function Aaron({ handleSubmit }) {
   const [broLocation, setBroLocation] = useState("98274");
-  const [insult, setInsult] = useState("");
+  const [dailyMsg, setDailyMsg] = useState("");
 
-  // const insultUrl = '(placeholder for insult url)'
+  // const dailyMsgUrl = '(placeholder for message url)'
 
   useEffect(() => {
     handleSubmit(broLocation);
   }, [broLocation]);
-
-  // useEffect(() => {
-  //     fetch(insultUrl)
-  //     .then((result) => result.json())
-  //     .then((data) => {setInsult(data)})
-  // }, [insult])
-  // console.log(insult)
 
   return (
     <div className="home home-aaron">

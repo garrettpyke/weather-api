@@ -37,7 +37,8 @@
 form label {
   text-align: center;
   align-self: center;
-  background-color: #4c956c;
+  /* background-color: #4c956c; */
+  background-color: #89A104;
 }
 
 header,
@@ -47,7 +48,7 @@ footer {
 }
 
 .home img {
-  width: 100%;
+  width: 90%;
 }
 
 .home h2 {
@@ -69,6 +70,8 @@ h5 {
 .weather h4 {
   text-align: center;
   font-size: 1.25em;
+  margin-top: 0;
+  margin-bottom: .5em
 }
 
 .weather h5 {
