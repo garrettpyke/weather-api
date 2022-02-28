@@ -16,7 +16,7 @@ header {
 form label {
   grid-row: 3/4;
 }
-
+/* */
 .weather-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
